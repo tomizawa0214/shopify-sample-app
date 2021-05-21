@@ -8,6 +8,8 @@ import {
   ResourceList,
   Stack,
 } from '@shopify/polaris'
+import { APP_URI } from '../constant'
+
 
 const CREATE_SCRIPT_TAG = gql`
   mutation scriptTagCreate($input: ScriptTagInput!) {
@@ -75,7 +77,7 @@ function ScriptPage() {
                 createScripts({
                   variables: {
                     input: {
-                      src: 'https://e95b30254a2d.ngrok.io/test-script.js',
+                      src: APP_URI + "/test-script.js",
                       displayScope: 'ALL',
                     },
                   },

@@ -1,3 +1,5 @@
+import { APP_URI } from '../constant'
+
 const script = document.createElement('script')
 script.src = 'https://code.jquery.com/jquery-3.4.1.min.js'
 script.type = 'text/javascript'
@@ -45,10 +47,7 @@ function handler() {
     })
 
     const bestSellerButton = $('<img />')
-      .attr(
-        'src',
-        'https://e95b30254a2d.ngrok.io/top.png'
-      )
+      .attr('src', `${APP_URI}/top.png`)
       .css({
         position: 'fixed',
         width: '150px',
@@ -66,7 +65,7 @@ function handler() {
   }
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/https://e95b30254a2d.ngrok.io/api/products?shop=${shop}`
+    `https://cors-anywhere.herokuapp.com/${APP_URI}/api/products?shop=${shop}`
   )
     .then((res) => res.json())
     .then((data) => {

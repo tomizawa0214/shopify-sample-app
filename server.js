@@ -17,7 +17,11 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-const { SHOPIFY_API_SECRET_KEY, SHOPIFY_API_KEY } = process.env
+const {
+  SHOPIFY_API_SECRET_KEY,
+  SHOPIFY_API_KEY,
+  APP_URl
+} = process.env
 
 const server = new Koa()
 const router = new KoaRouter()
